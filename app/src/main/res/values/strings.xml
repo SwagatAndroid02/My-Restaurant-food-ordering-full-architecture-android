@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">My Restaurant</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <bool name="isTablet">false</bool>
+    <string name="title_activity_dish">DishActivity</string>
+    <string name="myresto_phone_number">0000000000</string>
+
+    <string-array name="pin_codes">
+        <item>560041</item>
+        <item>560011</item>
+        <item>560070</item>
+        <item>560069</item>
+        <item>560078</item>
+        <item>560076</item>
+        <item>560078</item>
+        <item>560085</item>
+        <item>560070</item>
+        <item>560050</item>
+        <item>560068</item>
+    </string-array>
+
+
+</resources>

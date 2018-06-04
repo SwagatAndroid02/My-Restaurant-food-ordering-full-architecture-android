@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_list_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/dish_activity_iv_dishimage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:transitionName="Dish_image" />
+
+            <LinearLayout
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_curve_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/main_list_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="/5"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_list_dishName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:maxLines="2"
+                    android:text="pineapple"
+                    android:textColor="@color/grey800"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/main_list_btn_add"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/shape_capsule_red"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Add"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/main_list_plusminus_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/main_list_btn__minus"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/shape_round_primary_dark"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@drawable/button_pressed_white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/main_list_txt_count"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLength="3"
+                        android:text="1"
+                        android:textColor="@android:color/black" />
+
+                    <Button
+                        android:id="@+id/main_list_btn__plus"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/shape_round_primary_dark"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textColor="@drawable/button_pressed_white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/main_list_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="Description"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/main_list_original_price_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:id="@+id/main_list_original_price_inner_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/grey600"
+                            android:textStyle="bold"
+                            android:text="₹ "
+                            android:fontFamily="sans-serif-light"
+                            android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/main_list_original_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey600"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/grey600"
+                        android:layout_centerVertical="true"
+                        android:layout_alignStart="@id/main_list_original_price_inner_layout"
+                        android:layout_alignEnd="@id/main_list_original_price_inner_layout"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-light"
+                    android:text="₹ "
+                    android:textColor="@color/grey600"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/main_list_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:text="40"
+                    android:textColor="@color/grey600"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/main_list_vegnonveg_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/veg_icon" />
+            </LinearLayout>
+
+            <!--hidden ids and other stuffs-->
+            <TextView
+                android:id="@+id/main_list_dish_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/main_list_image_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/main_list_ingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/main_list_bloodgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/main_list_vegnonveg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginBottom="5dp"
+            android:layerType="software"
+            android:src="@drawable/dotted" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

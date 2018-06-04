@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context="project.android.thincnext.myrestaurent.activities.FinalPlaceOrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:id="@+id/finalOrdrPlc_image"
+       android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/finalOrdrPlc_txt_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Successful"
+        android:textColor="@color/green800"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:layout_gravity="center"/>
+
+   <Button
+       android:id="@+id/finalOrdrPlc_back_btn"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/colorPrimaryDark"
+       android:text="continue shopping"
+       android:textColor="@drawable/button_pressed_white"
+       android:layout_marginLeft="95dp"
+       android:layout_marginRight="95dp"/>
+
+        <TextView
+            android:id="@+id/finalOrdrPlc_order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Status"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="19sp"
+            android:textColor="@drawable/button_pressed_primarydark"
+            android:fontFamily="sans-serif"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

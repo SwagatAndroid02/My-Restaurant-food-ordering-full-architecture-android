@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="project.android.thincnext.myrestaurent.activities.SubscriptionActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ToolBarTheme.ToolBarStyle">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/subs_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/subs_activity_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/imageview_gradient"
+                    android:gravity="bottom">
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/subs_activity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="subscription"
+                android:textColor="@color/Black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/subs_activity_vegantype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Veg"
+                android:textColor="@color/Black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subs_activity_price_per_meal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="190"
+                    android:textColor="@color/grey800"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text=" per meal"
+                    android:textColor="@color/grey800"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/sub_activity_original_price_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:id="@+id/main_list_original_price_inner_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="₹ "
+                        android:textColor="@color/grey800"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/subs_activity_original_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="3000"
+                        android:textColor="@color/grey800"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_alignEnd="@id/main_list_original_price_inner_layout"
+                    android:layout_alignStart="@id/main_list_original_price_inner_layout"
+                    android:layout_centerVertical="true"
+                    android:background="@color/Black" />
+
+            </RelativeLayout>
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                tools:context=".MainActivity">
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="₹ "
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/colorAccent" />
+
+                        <TextView
+                            android:id="@+id/subs_activity_final_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/colorAccent" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/subs_activity_add_btn"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/shape_capsule_red"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:text="ADD"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/subs_activity_plus_minus_layout"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/subs_activity_btn__minus"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/shape_round_primary_dark"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@drawable/button_pressed_white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/subs_activity_txt_count"
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-condensed"
+                            android:gravity="center"
+                            android:maxLength="3"
+                            android:text="1"
+                            android:textColor="@color/Black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/subs_activity_btn__plus"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/shape_round_primary_dark"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="@drawable/button_pressed_white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/subs_activity_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/grey600"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/subs_activity_subId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

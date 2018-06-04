@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimaryOne">#FAFAFA</color>
+    <color name="colorPrimaryDarkOne">#BDBDBD</color>
+    <color name="red500">#f44336</color>
+    <color name="colorPrimary">#d32f2f</color>
+    <color name="colorPrimaryDark">#b71c1c</color>
+    <color name="colorAccent">#ec2328</color>
+    <color name="red200">#ef9a9a</color>
+
+    <color name="grey100">#F5F5F5</color>
+    <color name="grey200">#EEEEEE</color>
+    <color name="Grey">#808080</color>
+    <color name="grey500">#9E9E9E</color>
+    <color name="grey600">#757575</color>
+    <color name="grey800">#424242</color>
+    <color name="indigo500">#3F51B5</color>
+    <color name="green800">#2E7D32</color>
+    <color name="cyan700">#0097A7</color>
+    <color name="cyan600">#00ACC1</color>
+    <color name="cyan800">#00838F</color>
+    <color name="cyan900">#006064</color>
+
+    <color name="SteelBlue">#4682B4</color>
+    <color name="RoyalBlue">#4169E1</color>
+    <color name="green700">#388E3C</color>
+    <color name="blue800">#1565C0</color>
+    <color name="blue900">#0D47A1</color>
+    <color name="purple300">#7168b7</color>
+    <color name="purple500">#673AB7</color>
+    <color name="purple900">#311B92</color>
+
+    <color name="DodgerBlue">#1E90FF</color>
+    <color name="Black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="oragne800">#EF6C00</color>
+    <color name="deeporange500">#FF5722</color>
+</resources>

@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/home_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="project.android.thincnext.myrestaurent.activities.Home">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ToolBarTheme.ToolBarStyle"
+            app:elevation="0dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/home_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ImageView
+                    android:id="@+id/toolbar_button"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sang_grail_title" />
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="।।अन्नं परब्रह्मस्वरूपम्।।"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/home_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/home_internet_connection_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="no internet connection!"
+                    android:layout_above="@+id/home_internet_retry"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="19dp"
+                    android:fontFamily="sans-serif-condensed"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="retry"
+                    android:id="@+id/home_internet_retry" />
+            </RelativeLayout>
+
+            <!-- <android.support.design.widget.AppBarLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 app:elevation="0dp"
+                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                 <android.support.design.widget.TabLayout
+                     android:id="@+id/home_catagory_tabs"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     app:tabTextColor="@color/grey600"
+                     app:tabSelectedTextColor="@color/Black"
+                     app:tabMode="scrollable"
+                     android:elevation="0dp"/>
+             </android.support.design.widget.AppBarLayout>-->
+
+            <LinearLayout
+                android:id="@+id/home_tip_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/DodgerBlue"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/home_btn_tip_cancel"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/DodgerBlue"
+                    android:text="x"
+                    android:textColor="@drawable/button_pressed_white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="*Minimum order above Rs. 150/-"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- <android.support.v4.view.ViewPager
+                 android:id="@+id/home_viewpager"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+     -->
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/home_main_nestedscrollview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/home_main_tv_subscription"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Our Subscription Packages"
+                        android:textColor="@color/grey800" />
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_subscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="15dp">
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/home_txt_selected_category"
+                        android:gravity="center"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/grey800"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/home_recyclerview"
+                        android:layout_marginBottom="70dp">
+                    </android.support.v7.widget.RecyclerView>
+
+                   <!-- <TextView
+                        android:id="@+id/home_main_tv_breakfast"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Breakfast"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_brkfst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_dessert"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Dessert"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_dessrt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_starter"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Starter"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_starter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_soup"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Soup"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_soup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/home_main_tv_sandwich"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Sandwich"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_sandwich"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_pizza"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Pizza"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_pizza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_burger"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Burger"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_burger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_pasta"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Pasta"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_pasta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_salad"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Salad"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_salad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_brownrice"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Brown Rice"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_brownrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30dp">
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/home_main_tv_combo"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Combo"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textColor="@color/grey800" />
+
+                    <LinearLayout
+                        android:id="@+id/home_main_frag_combo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="50dp">
+                    </LinearLayout>-->
+
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <toan.android.floatingactionmenu.FloatingActionsMenu
+            android:id="@+id/home_main_floatingactionmenu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom|right"
+            android:layout_toLeftOf="@+id/multiple_actions_down"
+            android:layout_toStartOf="@+id/multiple_actions_down"
+            android:layout_weight="1"
+            fab:fab_addButtonColorNormal="@color/oragne800"
+            fab:fab_addButtonColorPressed="@color/deeporange500"
+            fab:fab_addButtonSize="normal"
+            fab:fab_expandDirection="up"
+            fab:fab_icon="@drawable/menu_opt_icon">
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Breakfast"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_breakfast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini" />
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Soup"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_soup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Soup" />
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Dessert"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_dessert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Dessert" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Starter"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_starter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Starter" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Pasta"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_pasta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Pasta" />
+                </TableRow>
+
+            </TableLayout>
+        </toan.android.floatingactionmenu.FloatingActionsMenu>
+
+        <toan.android.floatingactionmenu.FloatingActionsMenu
+            android:id="@+id/home_main_floatingactionmenu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom|right"
+            android:layout_toLeftOf="@+id/multiple_actions_down"
+            android:layout_toStartOf="@+id/multiple_actions_down"
+            android:layout_weight="1"
+            fab:fab_addButtonColorNormal="@color/oragne800"
+            fab:fab_addButtonColorPressed="@color/deeporange500"
+            fab:fab_addButtonSize="normal"
+            fab:fab_expandDirection="up"
+            fab:fab_icon="@drawable/menu_opt_icon">
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Pizza"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_pizza"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Pizza" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Burger"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_burger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Burger" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Sandwich"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_sandwich"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Sandwich" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Salad"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_salad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Salad" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Brown Rice"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_brownrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Brown Rice" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_background_white"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="Combo"
+                        android:textColor="@color/white" />
+
+                    <toan.android.floatingactionmenu.FloatingActionButton
+                        android:id="@+id/float_btn_combo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+                        fab:fab_colorNormal="@color/cyan900"
+                        fab:fab_colorPressed="@color/white"
+                        fab:fab_size="mini"
+                        fab:fab_title="Combo" />
+                </TableRow>
+            </TableLayout>
+        </toan.android.floatingactionmenu.FloatingActionsMenu>
+    </LinearLayout>-->
+    <ImageView
+        android:id="@+id/home_main_menu_image"
+        android:layout_width="135dp"
+        android:layout_height="90dp"
+        android:layout_gravity="bottom|center"
+        android:src="@drawable/menu_key_img"
+        android:padding="5dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="15dp"
+        android:elevation="5dp"/>
+</android.support.design.widget.CoordinatorLayout>

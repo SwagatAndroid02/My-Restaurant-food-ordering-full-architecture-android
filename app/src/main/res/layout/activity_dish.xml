@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/dish_activity_main"
+    android:background="@color/white"
+    tools:context="project.android.thincnext.myrestaurent.activities.DishActivity">
+
+   <!-- <android.support.design.widget.AppBarLayout
+        android:id="@+id/dish_activity_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ToolBarTheme.ToolBarStyle">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/dish_activity_collapsingtoolbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.MyApp.Title.Collapsed"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/TextAppearance.MyApp.Title.Expanded"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/dish_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/MyMaterialTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>-->
+
+    <LinearLayout
+        android:id="@+id/dish_activity_rating"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:background="@drawable/shape_curve_bg"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.4"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/dish_activity_txt_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/5"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <ImageView
+                    android:id="@+id/dish_activity_iv_dishimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:transitionName="Dish_image"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/imageview_gradient">
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/dish_activity_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:maxLines="2"
+                    android:text="brown rice and salad"
+                    android:textColor="@color/Black"
+                    android:textSize="21dp" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/dish_activity_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey500" />
+
+            <TextView
+                android:id="@+id/dish_activity_descp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="description description description description descrp description"
+                android:textSize="17sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="7dp"
+                android:text="Ingredients"
+                android:textColor="@color/grey600"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/dish_activity_ingredient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹ "
+                    android:textColor="@color/Black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/dish_activity_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="110"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/dish_activity_original_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/grey600"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/dish_activity_vegan_type"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="left"
+                    android:src="@drawable/veg_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dish_activity_addbtn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <Button
+                    android:id="@+id/dish_activity_btn_add"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/shape_capsule_red"
+                    android:text="add"
+                    android:textColor="@drawable/button_pressed_white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dish_activity_plusminus_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/dish_activity_btn__minus"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/shape_round_primary_dark"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@drawable/button_pressed_white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/dish_activity_txt_count"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLength="3"
+                    android:text="1"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/dish_activity_btn__plus"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/shape_round_primary_dark"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@drawable/button_pressed_white"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/dish_activity_opt_dial"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/dail_pressed_state" />
+
+                <ImageView
+                    android:id="@+id/dish_activity_opt_cart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/empty_cart_icon" />
+
+                <ImageView
+                    android:id="@+id/dish_activity_opt_rating"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/rating_botton_state" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/shape_edit_text_sharp_corner"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/single_itm_add_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/home_add_icon" />
+
+        <TextView
+            android:id="@+id/single_itm_add_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Home Address"
+            android:textColor="@color/grey800"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/single_itm_delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/delete_icon"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/single_itm_txt_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Hello word this is android"
+        android:textColor="@color/grey800"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/single_itm_txt_pincode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="560014"
+        android:textColor="@color/grey600"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/single_itm_add_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Hello word this is android"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,83 @@
+<resources>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimaryOne</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkOne</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@mipmap/home_arrow</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">@dimen/custom_peek_height</item>
+    </style>
+
+    <style name="ToolBarTheme.ToolBarStyle"    parent="Platform.ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textColorPrimaryInverse">@color/Black</item>
+    </style>
+
+
+    <style name="MyMaterialTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MyMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextAppearance.MyApp.Title.Collapsed" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.MyApp.Title.Expanded" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Drawer" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">#0000</item>
+    </style>
+
+    <style name="DialogAnimation_2">
+        <item name="android:windowEnterAnimation">@anim/layout_slide_up</item>
+        <item name="android:windowExitAnimation">@anim/layout_slide_down</item>
+    </style>
+
+    <style name="LoginDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+</resources>
